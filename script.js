@@ -242,7 +242,7 @@ function changePage(direction) {
     }, 10);
 }
 
-function finishTest() {
+async function finishTest() {
     const startIdx = currentPage * questionsPerPage;
     const endIdx = Math.min(startIdx + questionsPerPage, testQuestions.length);
     let allAnswered = true;
@@ -257,14 +257,59 @@ function finishTest() {
         return;
     }
 
+    // 1. Calcular las puntuaciones
     const scores = { "Insatisfecho": 0, "Inseguro": 0, "Dependiente": 0, "Irascible": 0 };
-
     testQuestions.forEach(q => {
         const rawVal = userAnswers[q.id];
         const finalVal = q.type === '-' ? (5 - rawVal) : rawVal; 
         scores[q.archetype] += finalVal;
     });
 
+    // 2. Cambiar visualmente el botón para que el usuario sepa que está cargando
+    const btnSubmit = document.getElementById('btn-submit');
+    const originalText = btnSubmit.innerHTML;
+    btnSubmit.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Analizando datos...`;
+    btnSubmit.disabled = true;
+
+    // 3. Empaquetar todos los datos recolectados
+    const payload = {
+        fecha: document.getElementById('evalDate').value,
+        perro: document.getElementById('dogName').value,
+        edad: document.getElementById('dogAge').value,
+        sexo: document.getElementById('dogSex').value,
+        raza: document.getElementById('dogBreed').value,
+        estado: document.getElementById('dogStatus').value,
+        tutor: document.getElementById('ownerName').value,
+        email: document.getElementById('ownerEmail').value,
+        telefono: document.getElementById('ownerPhone').value,
+        insatisfecho: scores["Insatisfecho"],
+        inseguro: scores["Inseguro"],
+        dependiente: scores["Dependiente"],
+        irascible: scores["Irascible"],
+        respuestas: JSON.stringify(userAnswers) // Esto empaqueta las 60 respuestas
+    };
+
+    // 4. Enviar los datos a Google Sheets
+    try {
+        // IMPORTANTE: Pon tu URL de Google Apps Script entre las comillas de abajo
+        const googleUrl = "https://script.google.com/macros/s/AKfycbzGDtDNpHNiCMwWoS-2Mnx2AroFEGZHWQjDOjuqre4-qu4sbEaRfUO2nKoNpmPPDk8geQ/exec"; 
+        
+        await fetch(googleUrl, {
+            method: "POST",
+            mode: "no-cors", // Evita bloqueos de seguridad del navegador
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+    } catch (error) {
+        console.error("Error al guardar en la base de datos", error);
+        // El código sigue fluyendo para no interrumpir la experiencia del usuario aunque haya un microcorte de internet
+    }
+
+    // 5. Restaurar botón y mostrar resultados
+    btnSubmit.innerHTML = originalText;
+    btnSubmit.disabled = false;
     mostrarResultados(scores);
 }
 
