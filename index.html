@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Arquetipos Emocionales | maestríanimal</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#00505b',
+                            hover: '#003d46',
+                            50: '#e0ecee',
+                            100: '#b3d3d7'
+                        },
+                        accent: {
+                            DEFAULT: '#ca6700',
+                            hover: '#a85500',
+                            50: '#fcf0e5',
+                            100: '#f7d8b8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen text-zinc-800 relative z-0">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10 no-print">
+        <div class="absolute -top-[10%] -right-[5%] w-[50%] md:w-[40%] h-[40%] rounded-full bg-brand/[0.04] blur-3xl"></div>
+        <div class="absolute top-[40%] md:top-[60%] -left-[10%] w-[50%] md:w-[30%] h-[30%] rounded-full bg-accent/[0.04] blur-3xl"></div>
+    </div>
+
+    <div class="h-2 w-full bg-gradient-to-r from-brand via-[#007a8b] to-accent no-print"></div>
+
+    <header class="bg-white/80 backdrop-blur-md border-b border-zinc-100 sticky top-0 z-50 print shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <img src="https://static.wixstatic.com/media/ef57ff_0664b831d4b946979477be738dc3b548~mv2.png" alt="Logo de maestríanimal" class="h-10 object-contain" id="brand-logo">
+            </div>
+            <div class="text-xs md:text-sm font-medium text-brand tracking-wide uppercase text-center">
+                Evaluación Etológica
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8 mt-2 md:mt-8">
+        
+        <div id="phase-1" class="space-y-6 md:space-y-8 animate-fade-in">
+            <div class="text-center max-w-2xl mx-auto mb-8 md:mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Test de Arquetipos Emocionales</h1>
+                <p class="text-zinc-500 leading-relaxed text-sm md:text-base">Completa los datos a continuación para iniciar la evaluación. Este instrumento permite perfilar las tendencias de afrontamiento del animal ante situaciones de estrés.</p>
+            </div>
+
+            <form id="data-form">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                    
+                    <div class="bg-white p-5 md:p-8 rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.02)] border border-zinc-100/50 relative overflow-hidden group hover:border-brand/20 transition-colors">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-50 to-transparent rounded-bl-full -z-10 opacity-70"></div>
+                        <div class="absolute top-0 right-0 w-1 h-full bg-brand opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="flex items-center gap-3 mb-6 md:mb-8">
+                            <div class="bg-brand-50 p-3 rounded-2xl rotate-3 group-hover:rotate-0 transition-transform">
+                                <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </div>
+                            <h2 class="text-xl font-bold text-brand">Datos del Perro</h2>
+                        </div>
+                        
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-zinc-600 mb-1.5">Nombre *</label>
+                                <input type="text" id="dogName" required class="minimal-input" placeholder="Ej. Max">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-600 mb-1.5">Edad *</label>
+                                    <input type="text" id="dogAge" required class="minimal-input" placeholder="Ej. 2 Años / 3 Meses">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-600 mb-1.5">Sexo *</label>
+                                    <select id="dogSex" required class="minimal-input text-zinc-600">
+                                        <option value="">Seleccione...</option>
+                                        <option value="Macho">Macho</option>
+                                        <option value="Hembra">Hembra</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-600 mb-1.5">Raza / Cruce *</label>
+                                    <input type="text" id="dogBreed" required class="minimal-input" placeholder="Ej. Mestizo">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-600 mb-1.5">Estado *</label>
+                                    <select id="dogStatus" required class="minimal-input text-zinc-600">
+                                        <option value="">Seleccione...</option>
+                                        <option value="Entero">Entero/a</option>
+                                        <option value="Castrado">Castrado/a</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 md:p-8 rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.02)] border border-zinc-100/50 relative overflow-hidden group hover:border-accent/20 transition-colors">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-50 to-transparent rounded-bl-full -z-10 opacity-70"></div>
+                        <div class="absolute top-0 right-0 w-1 h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="flex items-center gap-3 mb-6 md:mb-8">
+                            <div class="bg-accent-50 p-3 rounded-2xl -rotate-3 group-hover:rotate-0 transition-transform">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            </div>
+                            <h2 class="text-xl font-bold text-zinc-800">Datos de la Familia</h2>
+                        </div>
+                        
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-zinc-600 mb-1.5">Nombre del Tutor *</label>
+                                <input type="text" id="ownerName" required class="minimal-input" placeholder="Nombre completo">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-600 mb-1.5">Email *</label>
+                                    <input type="email" id="ownerEmail" class="minimal-input" placeholder="correo@ejemplo.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-600 mb-1.5">Teléfono Móvil *</label>
+                                    <input type="tel" id="ownerPhone" class="minimal-input" placeholder="+00 000000000">
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-zinc-100 mt-2">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-sm font-medium text-zinc-600 mb-1.5">Profesional a cargo *</label>
+                                        <input type="text" id="profName" required class="minimal-input" placeholder="Tu nombre">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-zinc-600 mb-1.5">Fecha *</label>
+                                        <input type="date" id="evalDate" required class="minimal-input text-zinc-600">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="form-error" class="text-red-500 text-sm font-medium mt-6 text-center hidden">Por favor, complete todos los campos obligatorios (*) antes de continuar.</div>
+
+                <div class="mt-8 md:mt-10 flex justify-center">
+                    <button type="button" onclick="startTest()" class="bg-gradient-to-r from-brand to-[#006a78] hover:from-brand hover:to-brand-hover text-white font-medium py-4 px-12 rounded-full shadow-[0_8px_20px_rgba(0,80,91,0.25)] hover:shadow-[0_8px_25px_rgba(0,80,91,0.35)] transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-1 w-full sm:w-auto">
+                        Comenzar Evaluación
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="phase-2" class="hidden-phase max-w-4xl mx-auto">
+            
+            <div class="mb-6 md:mb-8">
+                <div class="flex justify-between items-end mb-3">
+                    <div class="text-sm font-medium text-zinc-400 uppercase tracking-wide">Progreso</div>
+                    <div class="text-2xl font-bold text-brand"><span id="current-q-num">0</span> <span class="text-sm text-zinc-400 font-medium">/ 60</span></div>
+                </div>
+                <div class="w-full bg-zinc-100 rounded-full h-2">
+                    <div id="progress-bar-fill" class="bg-gradient-to-r from-brand to-accent h-2 rounded-full progress-bar relative overflow-hidden" style="width: 0%">
+                        <div class="absolute top-0 left-0 w-full h-full bg-white/20 animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-10 rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.02)] border border-zinc-100/50 relative">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zinc-100 to-transparent"></div>
+                <p class="text-zinc-500 mb-6 md:mb-8 pb-6 border-b border-zinc-100 text-sm md:text-[15px] leading-relaxed">
+                    Valora la frecuencia con la que el perro muestra cada conducta. Si nunca ha estado en la situación, responde basándote en cómo crees que reaccionaría.
+                </p>
+                
+                <div id="questions-container" class="space-y-10 md:space-y-12">
+                    </div>
+
+                <div id="test-error" class="text-red-500 text-sm font-medium mt-6 hidden text-center">Asegúrate de seleccionar una respuesta para todas las afirmaciones mostradas.</div>
+
+                <div class="mt-10 md:mt-12 flex flex-col-reverse sm:flex-row justify-between gap-4 pt-8 border-t border-zinc-100">
+                    <button type="button" id="btn-prev" onclick="changePage(-1)" class="bg-white border border-zinc-200 hover:border-brand hover:text-brand text-zinc-700 font-medium py-3 px-8 rounded-full transition-colors hidden w-full sm:w-auto text-center">
+                        Atrás
+                    </button>
+                    <div class="flex-grow hidden sm:block"></div>
+                    <button type="button" id="btn-next" onclick="changePage(1)" class="bg-brand hover:bg-brand-hover text-white font-medium py-3 px-10 rounded-full shadow-md hover:shadow-lg transition-all w-full sm:w-auto text-center transform hover:-translate-y-0.5">
+                        Continuar
+                    </button>
+                    <button type="button" id="btn-submit" onclick="finishTest()" class="bg-gradient-to-r from-accent to-[#e67500] hover:from-[#b35b00] hover:to-[#ca6700] text-white font-medium py-3 px-10 rounded-full shadow-[0_4px_15px_rgba(202,103,0,0.3)] transition-all hidden w-full sm:w-auto text-center transform hover:-translate-y-0.5">
+                        Finalizar Test
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="phase-3" class="hidden-phase max-w-4xl mx-auto">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 no-print">
+                <h2 class="text-2xl font-bold tracking-tight text-brand">Análisis Completado</h2>
+                <button onclick="window.print()" class="bg-white border border-zinc-200 hover:border-brand hover:text-brand text-zinc-800 px-6 py-3 sm:py-2.5 rounded-full text-sm font-medium flex items-center justify-center shadow-sm transition-colors w-full sm:w-auto">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    Descargar PDF / Imprimir
+                </button>
+            </div>
+
+            <div class="bg-white p-5 md:p-12 rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.02)] border border-zinc-100/50 print:border-none print:shadow-none print:p-0 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-brand-50 via-accent-50/30 to-transparent rounded-bl-full -z-10 opacity-70 no-print"></div>
+
+                <div class="text-center mb-8 md:mb-10 pb-8 md:pb-10 border-b border-zinc-100 relative">
+                    <div class="inline-block px-4 py-1.5 bg-accent-50 text-accent rounded-full text-xs font-bold uppercase tracking-widest mb-4 no-print">Reporte Generado</div>
+                    <h1 class="text-3xl font-bold mb-2 tracking-tight text-brand">Reporte de Arquetipos Emocionales</h1>
+                    <p class="text-zinc-500">Evaluación de Etología Aplicada</p>
+                </div>
+
+                <div class="bg-zinc-50 p-5 md:p-6 rounded-2xl mb-10 md:mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 print:bg-white print:border print:border-zinc-200">
+                    <div><span class="text-zinc-400 block text-[11px] uppercase tracking-wider font-semibold mb-1">Perro</span><strong id="res-dog-name" class="text-zinc-800 text-lg"></strong></div>
+                    <div><span class="text-zinc-400 block text-[11px] uppercase tracking-wider font-semibold mb-1">Perfil Físico</span><span id="res-dog-age-sex" class="text-zinc-800 font-medium"></span></div>
+                    <div><span class="text-zinc-400 block text-[11px] uppercase tracking-wider font-semibold mb-1">Familia / Tutor</span><span id="res-owner" class="text-zinc-800 font-medium"></span></div>
+                    <div><span class="text-zinc-400 block text-[11px] uppercase tracking-wider font-semibold mb-1">Evaluador / Fecha</span><span id="res-date-prof" class="text-zinc-800 font-medium"></span></div>
+                </div>
+
+                <div class="mb-14">
+                    <h3 class="text-sm font-semibold text-zinc-400 uppercase tracking-widest mb-6">Distribución del Perfil</h3>
+                    <div class="space-y-6" id="charts-container">
+                        </div>
+                </div>
+
+                <div class="mb-12" id="diagnostico-container">
+                    </div>
+
+                <div class="border-t border-zinc-100 pt-10">
+                    <h3 class="text-lg font-bold text-zinc-900 mb-3">Consideraciones Etológicas</h3>
+                    <div class="text-zinc-600 text-[15px] space-y-4 leading-relaxed">
+                        <p><strong>Naturaleza Multifactorial:</strong> El comportamiento animal es complejo y no es excluyente. Es completamente normal que el perro presente puntuaciones e influencia de los otros arquetipos, utilizando estrategias de afrontamiento diversas según el contexto.</p>
+                        <p id="mixed-profile-note" class="hidden font-medium p-4 rounded-xl print:bg-transparent print:p-0 print:border-l-4 print:pl-4"></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-10 text-center no-print pb-10">
+                <button onclick="location.reload()" class="text-zinc-500 hover:text-brand font-medium text-sm transition-colors border-b border-transparent hover:border-brand pb-1 flex items-center justify-center mx-auto gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    Comenzar una nueva evaluación
+                </button>
+            </div>
+        </div>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
