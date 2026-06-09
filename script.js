@@ -156,7 +156,7 @@ function startTest() {
     
     renderPage();
     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelector('header').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
 }
 
@@ -238,7 +238,7 @@ function changePage(direction) {
     currentPage += direction;
     renderPage();
     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelector('header').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
 }
 
@@ -355,6 +355,6 @@ function mostrarResultados(scores) {
     document.getElementById('phase-3').classList.remove('hidden-phase');
     
     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelector('header').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
 }
