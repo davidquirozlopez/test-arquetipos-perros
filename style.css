@@ -13,7 +13,13 @@ body {
     display: none !important; 
 }
 
-/* Estilos minimalistas para radio buttons tipo pill */
+/* Estilos minimalistas para radio buttons tipo pill 
+   (La lógica principal ahora se delega en el JS manteniendo :checked) */
+.radio-btn-group input[type="radio"]:focus-visible + label {
+    outline: 2px solid var(--brand-dark);
+    outline-offset: 2px;
+}
+
 .radio-btn-group input[type="radio"]:checked + label {
     background-color: var(--brand-dark);
     color: white;
