@@ -74,21 +74,21 @@ const archetypeData = {
         desc: "Muestra una baja tolerancia a la frustración y a la restricción. Cuando experimenta malestar, busca resolverlo incrementando su actividad y persistencia, lo que desemboca en sobreexcitación al no poder conseguir siempre lo que desea.",
         levels: {
             "Bajo": {
-                title: "Bajo (15–30)",
+                title: "Bajo",
                 messages: [
                     "Tu perro muestra buena tolerancia a la frustración en la mayoría de situaciones. Puede aparecer inquietud o insistencia de forma puntual, pero suele recuperarse rápido.",
                     "Este nivel sugiere que la frustración no es el eje principal del problema actual; podría ser más contextual (momentos específicos del paseo, comida, juego)."
                 ]
             },
             "Medio": {
-                title: "Moderado (31–45)",
+                title: "Moderado",
                 messages: [
                     "Tu perro presenta dificultades moderadas para tolerar límites o esperas, y puede insistir o escalar cuando algo no sale como quiere.",
                     "Este nivel indica que la frustración sí influye en su conducta diaria y conviene trabajar su autocontrol para prevenir que la intensidad aumente."
                 ]
             },
             "Alto": {
-                title: "Alto (46–60)",
+                title: "Alto",
                 messages: [
                     "Tu perro muestra alta reactividad por frustración: tiende a escalar rápidamente (tirones, ladridos, redirecciones, mordisqueo) cuando se le bloquea algo que desea.",
                     "Este nivel sugiere que la frustración es un motor central de los problemas actuales. Es recomendable un plan estructurado de manejo y entrenamiento y acompañamiento etológico profesional."
@@ -100,21 +100,21 @@ const archetypeData = {
         desc: "Responde a la incertidumbre o el malestar mediante la evitación activa y el aislamiento. Prefiere huir de las situaciones que percibe como amenazantes antes que enfrentarlas, inhibiendo su exploración y limitando sus experiencias.",
         levels: {
             "Bajo": {
-                title: "Bajo (15–30)",
+                title: "Bajo",
                 messages: [
                     "Tu perro muestra seguridad adecuada frente a estímulos nuevos o ruidos, con señales de cautela leves y manejables.",
                     "Este nivel sugiere que el miedo no predomina, aunque podría haber situaciones puntuales donde necesite más apoyo."
                 ]
             },
             "Medio": {
-                title: "Moderado (31–45)",
+                title: "Moderado",
                 messages: [
                     "Tu perro presenta inseguridad moderada: puede evitar, tensarse o hipervigilar en ciertos contextos (desconocidos, ruidos, espacios nuevos) y le cuesta relajarse.",
                     "Este nivel indica que el miedo sí condiciona su conducta. Conviene aplicar un plan terapéutico que le permita disminuir sus miedos, evitando forzarlo."
                 ]
             },
             "Alto": {
-                title: "Alto (46–60)",
+                title: "Alto",
                 messages: [
                     "Tu perro muestra alto nivel de inseguridad o miedo: tiende a evitar, bloquearse o reaccionar con intensidad en contextos comunes, y puede tener dificultad para recuperarse.",
                     "Este nivel sugiere que el miedo es un factor dominante. Es prioritario reducir su exposición a estímulos detonantes, aumentar su sensación de control/seguridad y trabajar con un etólogo profesional."
@@ -126,21 +126,21 @@ const archetypeData = {
         desc: "Canaliza la gestión emocional exclusivamente a través de sus figuras de apego. Es incapaz de superar el malestar sin la mediación física o atención continua de sus tutores o de su objeto de apego, careciendo de estrategias de afrontamiento independientes.",
         levels: {
             "Bajo": {
-                title: "Bajo (15–30)",
+                title: "Bajo",
                 messages: [
                     "Tu perro puede buscar cercanía, pero mantiene buena autonomía: tolera separaciones cortas y puede autorregularse sin necesitar contacto constante.",
                     "Este nivel sugiere que el apego no es el problema principal, aunque puede haber hábitos de seguimiento leves que no representan afectaciones."
                 ]
             },
             "Medio": {
-                title: "Moderado (31–45)",
+                title: "Moderado",
                 messages: [
                     "Tu perro muestra dependencia moderada: busca contacto frecuente para regularse, puede inquietarse ante separaciones y le cuesta estar por su cuenta.",
                     "Este nivel indica que conviene entrenar su autonomía y reforzar la calma en situaciones de inatención, soledad o separación."
                 ]
             },
             "Alto": {
-                title: "Alto (46–60)",
+                title: "Alto",
                 messages: [
                     "Tu perro presenta alta dependencia/hiperapego: necesita proximidad constante para estar bien y puede angustiarse cuando se separa de su figura de apego.",
                     "Este nivel sugiere que el apego es un factor central. Es recomendable un plan gradual (sin exposiciones bruscas) y apoyo etológico profesional, especialemente si hay signos compatibles con ansiedad intensa (vocalización persistente, destrucción, pánico, autolesiones, etc.)."
@@ -152,21 +152,21 @@ const archetypeData = {
         desc: "Gestiona el estrés imponiéndose al entorno. Intenta controlar activamente el comportamiento de humanos u otros animales mediante presión espacial, amenazas y desafíos, buscando que el entorno ceda a su voluntad para recuperar seguridad.",
         levels: {
             "Bajo": {
-                title: "Bajo (15–30)",
+                title: "Bajo",
                 messages: [
                     "Tu perro suele manejar bien las interacciones y los límites: muestra baja tendencia a controlar o amenazar a otros.",
                     "Este nivel sugiere bajo riesgo desde esta tendencia, aunque siempre es útil mantener prevención haciendo un buen manejo de recursos y garantizando el respeto de espacios."
                 ]
             },
             "Medio": {
-                title: "Moderado (31–45)",
+                title: "Moderado",
                 messages: [
                     "Tu perro muestra tendencia moderada a controlar o confrontar en situaciones específicas (recursos, manipulación, invasión de espacio, correa).",
                     "Este nivel indica que hay señales de alerta: conviene ajustar las estrategias de manejo (evitar conflictos, leer señales tempranas) y trabajar habilidades de calma y regulación emocional."
                 ]
             },
             "Alto": {
-                title: "Alto (46–60)",
+                title: "Alto",
                 messages: [
                     "Tu perro presenta alta propensión a respuestas de amenaza/defensa y puede escalar con rapidez ante invasión, manipulación o disputa de recursos.",
                     "Este nivel sugiere riesgo elevado de incidentes si no se gestiona. Es prioritario aplicar medidas de seguridad (prevención, control de entorno, protocolos de manejo) y trabajar con un profesional en etología, especialmente si ya hubo intentos de mordida o agresiones fuertes."
@@ -204,7 +204,7 @@ function shuffle(array) {
 }
 
 function startTest() {
-    const requiredIds = ['dogName', 'dogAge', 'dogSex', 'dogBreed', 'dogStatus', 'dogOrigin', 'dogAcquisitionAge', 'dogFirstOutingAge', 'ownerName', 'profName', 'evalDate', 'ownerEmail','ownerPhone', 'dataConsent'];
+    const requiredIds = ['dogName', 'dogAge', 'dogSex', 'dogBreed', 'dogStatus', 'dogOrigin', 'dogAcquisitionAge', 'dogFirstOutingAge', 'ownerName', 'profName', 'evalDate', 'dataConsent'];
     let isValid = true;
     
     requiredIds.forEach(id => {
@@ -412,6 +412,10 @@ function mostrarResultados(scores) {
     // Renderizar TODAS las tendencias en orden descendente combinando distribución y descripciones
     sortedScores.forEach(([arch, score], index) => {
         const percentage = (score / 60) * 100;
+        
+        // NUEVO: Formatear el porcentaje para mostrar 1 decimal y reemplazar el punto por coma
+        const formattedPercentage = percentage.toFixed(1).replace('.', ',') + ' %';
+        
         const data = archetypeData[arch];
         
         // Determinar el Nivel de Afectación
@@ -442,7 +446,7 @@ function mostrarResultados(scores) {
                         </div>
                         ${arch}
                     </h3>
-                    <span class="text-lg font-bold bg-zinc-50 px-3 py-1 rounded-lg border border-zinc-200 print:border-none print:bg-transparent">${score} / 60 pts</span>
+                    <span class="text-lg font-bold bg-zinc-50 px-3 py-1 rounded-lg border border-zinc-200 print:border-none print:bg-transparent">${formattedPercentage}</span>
                 </div>
 
                 <div class="w-full bg-zinc-100 rounded-full h-3 mb-6 print:border print:border-zinc-200">
