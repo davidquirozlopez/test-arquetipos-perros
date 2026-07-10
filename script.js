@@ -361,6 +361,7 @@ async function finishTest() {
         tutor: document.getElementById('ownerName').value,
         email: document.getElementById('ownerEmail').value,
         telefono: document.getElementById('ownerPhone').value,
+        profesional: document.getElementById('profName').value,
         insatisfecho: scores["Insatisfecho"],
         inseguro: scores["Inseguro"],
         dependiente: scores["Dependiente"],
